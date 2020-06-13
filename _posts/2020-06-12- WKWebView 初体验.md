@@ -31,7 +31,7 @@ WKWebsiteDataStore <br>
 WKUIDelegate<br>
 
 ## WKWebView 属性介绍
-```c
+```objc
 // 导航代理
 @property (nullable, nonatomic, weak) id <WKNavigationDelegate> navigationDelegate;
 // UI代理
@@ -63,7 +63,7 @@ WKUIDelegate<br>
 ```
 ## WKWebView 方法介绍
 
-```c
+```objc
 // 带配置信息的初始化方法
 // configuration 配置信息
 - (instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)configuration
@@ -86,7 +86,7 @@ WKUIDelegate<br>
 ```
 
 ## WKWebViewConfiguration
-```c
+```objc
 // 通过此属性来执行JavaScript代码来修改页面的行为
 @property (nonatomic, strong) WKUserContentController *userContentController;
 
@@ -106,7 +106,7 @@ WKUIDelegate<br>
 ## WKUserContentController
 WKUserContentController 是JavaScript与原生进行交互的桥梁, 主要使用的方法有:
 
-``` c
+``` objc
 // 注入JavaScript与原生交互协议
 // JS 端可通过 window.webkit.messageHandlers.<name>.postMessage(<messageBody>) 发送消息
 - (void)addScriptMessageHandler:(id <WKScriptMessageHandler>)scriptMessageHandler name:(NSString *)name;
@@ -120,12 +120,12 @@ WKUserContentController 是JavaScript与原生进行交互的桥梁, 主要使�
 ```
 使用WKUserContentController注入的交互协议, 需要遵循WKScriptMessageHandler协议, 在其协议方法中获取JavaScript端传递的事件和参数:
 
-``` c
+``` objc
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message;
 ```
 WKScriptMessage包含了传递的协议名称及参数, 主要从下面的属性中获取:
 
-``` c
+``` objc
 // 协议名称, 即上面的add方法传递的name
 @property (nonatomic, readonly, copy) NSString *name;
 // 传递的参数
@@ -136,7 +136,7 @@ WKScriptMessage包含了传递的协议名称及参数, 主要从下面的属性
 
 WKUserScript用于往加载的页面中添加额外需要执行的JavaScript代码, 主要是一个初始化方法:
 
-``` c
+``` objc
 /*
 source: 需要执行的JavaScript代码
 injectionTime: 加入的位置, 是一个枚举
@@ -153,7 +153,7 @@ forMainFrameOnly: 是加入所有框架, 还是只加入主框架
 
 ## WKUIDelegate
 这个代理方法, 主要是用来处理使用系统的弹框来替换JS中的一些弹框的,比如: 警告框, 选择框, 输入框, 主要使用的是下面三个代理方法:
-``` c
+``` objc
 /**
  webView中弹出警告框时调用, 只能有一个按钮
 
@@ -235,7 +235,7 @@ forMainFrameOnly: 是加入所有框架, 还是只加入主框架
 ```
 
 ## WKNavigationDelegate
-``` c
+``` objc
 // 决定导航的动作，通常用于处理跨域的链接能否导航。
 // WebKit对跨域进行了安全检查限制，不允许跨域，因此我们要对不能跨域的链接单独处理。
 // 但是，对于Safari是允许跨域的，不用这么处理。
@@ -293,7 +293,7 @@ forMainFrameOnly: 是加入所有框架, 还是只加入主框架
 
 ## WKWebsiteDataStore
 WKWebsiteDataStore 提供了网站所能使用的数据类型，包括 cookies，硬盘缓存，内存缓存活在一些WebSQL的数据持久化和本地持久化。可通过 WKWebViewConfiguration 类的属性 websiteDataStore 进行相关的设置。WKWebsiteDataStore 相关的API也比较简单：
-``` c
+``` objc
 // 默认的data store
 + (WKWebsiteDataStore *)defaultDataStore;
 
@@ -323,7 +323,7 @@ WKWebsiteDataStore 提供了网站所能使用的数据类型，包括 cookies�
 ```
 
 > 获取所有可使用的数据类型
-``` c
+``` objc
 // 硬盘缓存
 WKWebsiteDataTypeDiskCache,
 
@@ -359,7 +359,7 @@ WKWebsiteDataTypeWebSQLDatabases
 
 ### WKHTTPCookieStore
 关于cookie, 从WKWebsiteDataStore 的实例对象的数属性httpCookieStore 可获取一个 WKHTTPCookieStore 的实例对象, 通过此对象, 我们可以对cookie进行相关的操作, 官方提供的API也不难理解:
-``` c
+``` objc
 /*!  查找所有已存储的cookie
  */
 - (void)getAllCookies:(void (^)(NSArray<NSHTTPCookie *> *))completionHandler;
@@ -383,7 +383,7 @@ WKWebsiteDataTypeWebSQLDatabases
 
 ```
 ### WKHTTPCookieStoreObserver协议方法
-``` c
+``` objc
 @protocol WKHTTPCookieStoreObserver <NSObject>
 @optional
 - (void)cookiesDidChangeInCookieStore:(WKHTTPCookieStore *)cookieStore;
