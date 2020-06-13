@@ -1,3 +1,15 @@
+---
+layout:     post   				    # 使用的布局（不需要改）
+title:      WKWebView 初体验				# 标题 
+subtitle:    #副标题
+date:       2020-06-13 				# 时间
+author:     jianjingbao 						# 作者
+header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
+catalog: true 						# 是否归档
+tags:								#标签
+    - WKWebView
+---
+
 # WKWebView 初体验
 
 [toc]
