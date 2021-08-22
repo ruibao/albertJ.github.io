@@ -1,9 +1,9 @@
 {
-    "name": "by-blog",
-    "title": "BY Blog",
-    "author": "BY <qiubaiyingios@163.com>",
+    "name": "Albert",
+    "title": "Albert",
+    "author": "A.J <albert.j@qq.com>",
     "version": "1.7.0",
-    "homepage": "http://qiubaiying.github.io",
+    "homepage": "http://jianjingbao.github.io",
     "repository": {
         "type": "git",
         "url": "https://github.com/qiubaiying/qiubaiying.github.io"

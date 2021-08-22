@@ -19,10 +19,10 @@ sidebar-avatar: /img/avatar-albert.png      # use absolute URL, seeing it's used
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-zhihu_username:     jianjingbao
-github_username:    jianjingbao
-facebook_username:  happydjb
-jianshu_username:   e71990ada2fd
+#zhihu_username:     jianjingbao
+#github_username:    jianjingbao
+#facebook_username:  happydjb
+#jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
 
 
@@ -61,7 +61,7 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: true    #是否开启Gitalk评论
+  enable: false    #是否开启Gitalk评论
   clientID: Iv1.95ed626d3db3b307                            #生成的clientID
   clientSecret: 90db7792997421c523a83f60d34cafb7bbbb2bda    #生成的clientSecret
   repo: jianjingbao.github.io    #仓库名称
@@ -98,19 +98,19 @@ service-worker: true
 
 # Friends
 friends: [
-    {
-        title: "Albert",
-        href: "http://zhengwuyang.com"
-    },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
-    }
+#    {
+#        title: "Albert",
+#        href: "http://zhengwuyang.com"
+#    },{
+#        title: "简书·BY",
+#        href: "http://www.jianshu.com/u/e71990ada2fd"
+#    },{
+#        title: "Apple",
+#        href: "https://apple.com"
+#    },{
+#        title: "Apple Developer",
+#        href: "https://developer.apple.com/"
+#    }
 ]
 
 theme: jekyll-theme-minimal
